@@ -113,7 +113,7 @@ void *Worker(void *arg) {
   int total, i, j, first, last;
 
 #ifdef DEBUG
-  printf("worker %d (pthread id %d) has started\n", myid, pthread_self());
+  printf("worker %ld (pthread id %ld) has started\n", myid, pthread_self());
 #endif
 
   /* determine first and last rows of my strip */
@@ -137,4 +137,5 @@ void *Worker(void *arg) {
     printf("The total is %d\n", total);
     printf("The execution time is %g sec\n", end_time - start_time);
   }
+  return 0;
 }

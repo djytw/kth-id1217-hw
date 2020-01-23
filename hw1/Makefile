@@ -4,12 +4,15 @@ CFLAGS := -Wall -g
 SRCS := $(wildcard *.c)
 TARGET := ./build/$(SRCS:%.c=%)
 
-
-all: $(TARGET)
-	@mkdir -p build
+ifdef DEBUG
+CFLAGS += -DDEBUG
+endif
 
 $(TARGET):$(SRCS)
-	$(CC) $(CFLAGS) -o $@ $^ $(LIBS) 
+	@mkdir -p build
+	@printf "\e[0;46m$(CC) $(CFLAGS) -o $@ $^ $(LIBS)\e[0m\n"
+	@$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
+	@echo 
 
 clean:
 	@rm -rf build
