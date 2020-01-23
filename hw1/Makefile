@@ -2,17 +2,18 @@ CC := gcc
 LIBS := -lpthread -lm
 CFLAGS := -Wall -g
 SRCS := $(wildcard *.c)
-TARGET := ./build/$(SRCS:%.c=%)
+TARGET := $(SRCS:%.c=build/%)
 
 ifdef DEBUG
 CFLAGS += -DDEBUG
 endif
 
-$(TARGET):$(SRCS)
+all:$(TARGET)
+
+build/%:%.c
 	@mkdir -p build
-	@printf "\e[0;46m$(CC) $(CFLAGS) -o $@ $^ $(LIBS)\e[0m\n"
-	@$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
-	@echo 
+	@printf "\e[0;36m$(CC) $(CFLAGS) -o $@ $^ $(LIBS)\e[0m\n"
+	-@$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
 clean:
 	@rm -rf build
