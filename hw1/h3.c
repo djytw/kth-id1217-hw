@@ -5,6 +5,7 @@
 #include <time.h>
 #include <sys/time.h>
 #include <math.h>
+#include <string.h>
 
 #define f(x) (sqrt(1-(x)*(x)))
 #define MAXSLICE 1000000
@@ -13,7 +14,11 @@
 int NextPos = 0;
 int Slices = MAXSLICE;
 double Step = 0;
-double Result = 0.0;
+double Result;
+long long Counter = 0;
+
+pthread_mutex_t count_lock = PTHREAD_MUTEX_INITIALIZER;
+
 int NumWorkers;
 double start_time, end_time;
 
@@ -27,35 +32,38 @@ int main(int argc, char **argv){
     NumWorkers = (argc > 2)? atoi(argv[2]) : MAXWORKERS;
     if (NumWorkers > MAXWORKERS) NumWorkers = MAXWORKERS;
 
-    int l;
+    long l;
     pthread_t workerid[MAXWORKERS];
     NextPos = 0;
-    
     start_time = read_timer();
     
     for (l = 0; l < NumWorkers; l++)
-        pthread_create(&workerid[l], NULL, Worker, NULL);
+        pthread_create(&workerid[l], NULL, Worker, (void*)l);
 
-    for (l = 0; l < NumWorkers; l++)
+    for (l = 0; l < NumWorkers; l++){
         pthread_join(workerid[l], NULL);
-
+    }
     
     end_time = read_timer();
-    printf("pi = %.15lf\n", Result * 4);
+    printf("pi = %.9lf count = %lld\n", Result * 4, Counter);
     printf("The execution time is %g sec\n", end_time - start_time);
     return 0;
 }
-
+double area(double x){
+    __sync_synchronize();
+    return (f(x) + f(x + Step)) * Step / 2;
+}
 void *Worker(void *arg) {
     int pos;
-    double x,res;
+    volatile double t = 0;
     while(1){
         pos = __sync_fetch_and_add(&NextPos, 1);
         if (pos >= Slices)break;
-        x = (double)pos * Step;
-        res = (f(x) + f(x + Step)) * Step / 2;
-        Result += res;
-        //printf("%.15lf,%.15lf\n",x,res);
+        t = area((double)pos * Step);
+        pthread_mutex_lock(&count_lock);
+        Counter += pos;
+        Result += t;
+        pthread_mutex_unlock(&count_lock);
     }
     return NULL;
 }
