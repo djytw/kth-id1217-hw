@@ -1,0 +1,41 @@
+
+
+1 Threads, Matrix 10000x10000
+The total is 604474708
+Max: 98 at (0,92); Min: 0 at (0,36)
+The execution time is 0.344062 sec
+
+4 Threads, Matrix 10000x10000
+The total is 605322724
+Max: 98 at (0,25); Min: 0 at (0,98)
+The execution time is 0.169667 sec
+
+7 Threads, Matrix 10000x10000
+The total is 605266130
+Max: 98 at (0,27); Min: 0 at (0,1)
+The execution time is 0.098196 sec
+
+10 Threads, Matrix 10000x10000
+The total is 604662683
+Max: 98 at (0,5); Min: 0 at (0,111)
+The execution time is 0.062004 sec
+
+13 Threads, Matrix 10000x10000
+The total is 604978025
+Max: 98 at (0,124); Min: 0 at (0,69)
+The execution time is 0.0556 sec
+
+16 Threads, Matrix 10000x10000
+The total is 604540598
+Max: 98 at (0,12); Min: 0 at (0,22)
+The execution time is 0.045641 sec
+
+19 Threads, Matrix 10000x10000
+The total is 604919062
+Max: 98 at (0,1); Min: 0 at (0,82)
+The execution time is 0.039377 sec
+
+22 Threads, Matrix 10000x10000
+The total is 604919062
+Max: 98 at (0,1); Min: 0 at (0,82)
+The execution time is 0.037399 sec

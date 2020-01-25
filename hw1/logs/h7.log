@@ -1,0 +1,1060 @@
+pthread create OK
+Worker Counter = 100M, Completed=2.26% (Total~=4426M), run=19.1903s
+Worker Counter = 200M, Completed=4.52% (Total~=4426M), run=38.2725s
+Worker Counter = 300M, Completed=6.78% (Total~=4426M), run=57.0715s
+Worker Counter = 400M, Completed=9.04% (Total~=4426M), run=76.2371s
+passed 3
+Solution 1:
+x o o o o o o o 
+o o o o x o o o 
+o o o o o o o x 
+o o o o o x o o 
+o o x o o o o o 
+o o o o o o x o 
+o x o o o o o o 
+o o o x o o o o 
+
+passed 3
+Solution 2:
+x o o o o o o o 
+o o o o o x o o 
+o o o o o o o x 
+o o x o o o o o 
+o o o o o o x o 
+o o o x o o o o 
+o x o o o o o o 
+o o o o x o o o 
+
+passed 3
+Solution 3:
+x o o o o o o o 
+o o o o o o x o 
+o o o x o o o o 
+o o o o o x o o 
+o o o o o o o x 
+o x o o o o o o 
+o o o o x o o o 
+o o x o o o o o 
+
+passed 3
+Solution 4:
+x o o o o o o o 
+o o o o o o x o 
+o o o o x o o o 
+o o o o o o o x 
+o x o o o o o o 
+o o o x o o o o 
+o o o o o x o o 
+o o x o o o o o 
+
+Worker Counter = 500M, Completed=11.30% (Total~=4426M), run=95.4695s
+Worker Counter = 600M, Completed=13.56% (Total~=4426M), run=114.229s
+Worker Counter = 700M, Completed=15.82% (Total~=4426M), run=133.106s
+Worker Counter = 800M, Completed=18.08% (Total~=4426M), run=152.103s
+Worker Counter = 900M, Completed=20.33% (Total~=4426M), run=171.689s
+passed 3
+Solution 5:
+o x o o o o o o 
+o o o x o o o o 
+o o o o o x o o 
+o o o o o o o x 
+o o x o o o o o 
+x o o o o o o o 
+o o o o o o x o 
+o o o o x o o o 
+
+passed 3
+Solution 6:
+o x o o o o o o 
+o o o o x o o o 
+o o o o o o x o 
+x o o o o o o o 
+o o x o o o o o 
+o o o o o o o x 
+o o o o o x o o 
+o o o x o o o o 
+
+passed 3
+Solution 7:
+o x o o o o o o 
+o o o o x o o o 
+o o o o o o x o 
+o o o x o o o o 
+x o o o o o o o 
+o o o o o o o x 
+o o o o o x o o 
+o o x o o o o o 
+
+passed 3
+Solution 8:
+o x o o o o o o 
+o o o o o x o o 
+x o o o o o o o 
+o o o o o o x o 
+o o o x o o o o 
+o o o o o o o x 
+o o x o o o o o 
+o o o o x o o o 
+
+passed 3
+Solution 9:
+o x o o o o o o 
+o o o o o x o o 
+o o o o o o o x 
+o o x o o o o o 
+x o o o o o o o 
+o o o x o o o o 
+o o o o o o x o 
+o o o o x o o o 
+
+passed 3
+Solution 10:
+o x o o o o o o 
+o o o o o o x o 
+o o x o o o o o 
+o o o o o x o o 
+o o o o o o o x 
+o o o o x o o o 
+x o o o o o o o 
+o o o x o o o o 
+
+passed 3
+Solution 11:
+o x o o o o o o 
+o o o o o o x o 
+o o o o x o o o 
+o o o o o o o x 
+x o o o o o o o 
+o o o x o o o o 
+o o o o o x o o 
+o o x o o o o o 
+
+passed 3
+Solution 12:
+o x o o o o o o 
+o o o o o o o x 
+o o o o o x o o 
+x o o o o o o o 
+o o x o o o o o 
+o o o o x o o o 
+o o o o o o x o 
+o o o x o o o o 
+
+Worker Counter = 1000M, Completed=22.59% (Total~=4426M), run=191.596s
+Worker Counter = 1100M, Completed=24.85% (Total~=4426M), run=210.573s
+Worker Counter = 1200M, Completed=27.11% (Total~=4426M), run=229.68s
+passed 3
+Solution 13:
+o o x o o o o o 
+x o o o o o o o 
+o o o o o o x o 
+o o o o x o o o 
+o o o o o o o x 
+o x o o o o o o 
+o o o x o o o o 
+o o o o o x o o 
+
+Worker Counter = 1300M, Completed=29.37% (Total~=4426M), run=248.816s
+passed 3
+Solution 14:
+o o x o o o o o 
+o o o o x o o o 
+o x o o o o o o 
+o o o o o o o x 
+x o o o o o o o 
+o o o o o o x o 
+o o o x o o o o 
+o o o o o x o o 
+
+passed 3
+Solution 15:
+o o x o o o o o 
+o o o o x o o o 
+o x o o o o o o 
+o o o o o o o x 
+o o o o o x o o 
+o o o x o o o o 
+o o o o o o x o 
+x o o o o o o o 
+
+passed 3
+Solution 16:
+o o x o o o o o 
+o o o o x o o o 
+o o o o o o x o 
+x o o o o o o o 
+o o o x o o o o 
+o x o o o o o o 
+o o o o o o o x 
+o o o o o x o o 
+
+passed 3
+Solution 17:
+o o x o o o o o 
+o o o o x o o o 
+o o o o o o o x 
+o o o x o o o o 
+x o o o o o o o 
+o o o o o o x o 
+o x o o o o o o 
+o o o o o x o o 
+
+passed 3
+Solution 18:
+o o x o o o o o 
+o o o o o x o o 
+o x o o o o o o 
+o o o o x o o o 
+o o o o o o o x 
+x o o o o o o o 
+o o o o o o x o 
+o o o x o o o o 
+
+passed 3
+Solution 19:
+o o x o o o o o 
+o o o o o x o o 
+o x o o o o o o 
+o o o o o o x o 
+x o o o o o o o 
+o o o x o o o o 
+o o o o o o o x 
+o o o o x o o o 
+
+passed 3
+Solution 20:
+o o x o o o o o 
+o o o o o x o o 
+o x o o o o o o 
+o o o o o o x o 
+o o o o x o o o 
+x o o o o o o o 
+o o o o o o o x 
+o o o x o o o o 
+
+passed 3
+Solution 21:
+o o x o o o o o 
+o o o o o x o o 
+o o o x o o o o 
+x o o o o o o o 
+o o o o o o o x 
+o o o o x o o o 
+o o o o o o x o 
+o x o o o o o o 
+
+passed 3
+Solution 22:
+o o x o o o o o 
+o o o o o x o o 
+o o o x o o o o 
+o x o o o o o o 
+o o o o o o o x 
+o o o o x o o o 
+o o o o o o x o 
+x o o o o o o o 
+
+passed 3
+Solution 23:
+o o x o o o o o 
+o o o o o x o o 
+o o o o o o o x 
+x o o o o o o o 
+o o o o x o o o 
+o o o o o o x o 
+o x o o o o o o 
+o o o x o o o o 
+
+passed 3
+Solution 24:
+o o x o o o o o 
+o o o o o x o o 
+o o o o o o o x 
+x o o o o o o o 
+o o o x o o o o 
+o o o o o o x o 
+o o o o x o o o 
+o x o o o o o o 
+
+passed 3
+Solution 25:
+o o x o o o o o 
+o o o o o x o o 
+o o o o o o o x 
+o x o o o o o o 
+o o o x o o o o 
+x o o o o o o o 
+o o o o o o x o 
+o o o o x o o o 
+
+passed 3
+Solution 26:
+o o x o o o o o 
+o o o o o o x o 
+o x o o o o o o 
+o o o o o o o x 
+o o o o o x o o 
+o o o x o o o o 
+x o o o o o o o 
+o o o o x o o o 
+
+passed 3
+Solution 27:
+o o x o o o o o 
+o o o o o o x o 
+o x o o o o o o 
+o o o o o o o x 
+o o o o x o o o 
+x o o o o o o o 
+o o o x o o o o 
+o o o o o x o o 
+
+Worker Counter = 1400M, Completed=31.63% (Total~=4426M), run=268.188s
+passed 3
+Solution 28:
+o o x o o o o o 
+o o o o o o o x 
+o o o x o o o o 
+o o o o o o x o 
+x o o o o o o o 
+o o o o o x o o 
+o x o o o o o o 
+o o o o x o o o 
+
+Worker Counter = 1500M, Completed=33.89% (Total~=4426M), run=286.995s
+Worker Counter = 1600M, Completed=36.15% (Total~=4426M), run=306.101s
+passed 3
+Solution 29:
+o o o x o o o o 
+x o o o o o o o 
+o o o o x o o o 
+o o o o o o o x 
+o x o o o o o o 
+o o o o o o x o 
+o o x o o o o o 
+o o o o o x o o 
+
+passed 3
+Solution 30:
+o o o x o o o o 
+x o o o o o o o 
+o o o o x o o o 
+o o o o o o o x 
+o o o o o x o o 
+o o x o o o o o 
+o o o o o o x o 
+o x o o o o o o 
+
+passed 3
+Solution 31:
+o o o x o o o o 
+o x o o o o o o 
+o o o o x o o o 
+o o o o o o o x 
+o o o o o x o o 
+x o o o o o o o 
+o o x o o o o o 
+o o o o o o x o 
+
+passed 3
+passed 3
+Solution 32:
+o o o x o o o o 
+o x o o o o o o 
+o o o o o o x o 
+o o x o o o o o 
+o o o o o x o o 
+o o o o o o o x 
+x o o o o o o o 
+o o o o x o o o 
+
+Solution 33:
+o o o x o o o o 
+o x o o o o o o 
+o o o o o o x o 
+o o x o o o o o 
+o o o o o x o o 
+o o o o o o o x 
+o o o o x o o o 
+x o o o o o o o 
+
+passed 3
+Solution 34:
+o o o x o o o o 
+o x o o o o o o 
+o o o o o o x o 
+o o o o x o o o 
+x o o o o o o o 
+o o o o o o o x 
+o o o o o x o o 
+o o x o o o o o 
+
+passed 3
+Solution 35:
+o o o x o o o o 
+o x o o o o o o 
+o o o o o o o x 
+o o o o x o o o 
+o o o o o o x o 
+x o o o o o o o 
+o o x o o o o o 
+o o o o o x o o 
+
+passed 3
+Solution 36:
+o o o x o o o o 
+o x o o o o o o 
+o o o o o o o x 
+o o o o o x o o 
+x o o o o o o o 
+o o x o o o o o 
+o o o o x o o o 
+o o o o o o x o 
+
+Worker Counter = 1700M, Completed=38.41% (Total~=4426M), run=325.258s
+passed 3
+Solution 37:
+o o o x o o o o 
+o o o o o x o o 
+x o o o o o o o 
+o o o o x o o o 
+o x o o o o o o 
+o o o o o o o x 
+o o x o o o o o 
+o o o o o o x o 
+
+passed 3
+Solution 38:
+o o o x o o o o 
+o o o o o x o o 
+o o o o o o o x 
+o x o o o o o o 
+o o o o o o x o 
+x o o o o o o o 
+o o x o o o o o 
+o o o o x o o o 
+
+passed 3
+Solution 39:
+o o o x o o o o 
+o o o o o x o o 
+o o o o o o o x 
+o o x o o o o o 
+x o o o o o o o 
+o o o o o o x o 
+o o o o x o o o 
+o x o o o o o o 
+
+passed 3
+Solution 40:
+o o o x o o o o 
+o o o o o o x o 
+x o o o o o o o 
+o o o o o o o x 
+o o o o x o o o 
+o x o o o o o o 
+o o o o o x o o 
+o o x o o o o o 
+
+passed 3
+Solution 41:
+o o o x o o o o 
+o o o o o o x o 
+o o x o o o o o 
+o o o o o o o x 
+o x o o o o o o 
+o o o o x o o o 
+x o o o o o o o 
+o o o o o x o o 
+
+passed 3
+Solution 42:
+o o o x o o o o 
+o o o o o o x o 
+o o o o x o o o 
+o x o o o o o o 
+o o o o o x o o 
+x o o o o o o o 
+o o x o o o o o 
+o o o o o o o x 
+
+passed 3
+Solution 43:
+o o o x o o o o 
+o o o o o o x o 
+o o o o x o o o 
+o o x o o o o o 
+x o o o o o o o 
+o o o o o x o o 
+o o o o o o o x 
+o x o o o o o o 
+
+passed 3
+Solution 44:
+o o o x o o o o 
+o o o o o o o x 
+x o o o o o o o 
+o o x o o o o o 
+o o o o o x o o 
+o x o o o o o o 
+o o o o o o x o 
+o o o o x o o o 
+
+passed 3
+Solution 45:
+o o o x o o o o 
+o o o o o o o x 
+x o o o o o o o 
+o o o o x o o o 
+o o o o o o x o 
+o x o o o o o o 
+o o o o o x o o 
+o o x o o o o o 
+
+passed 3
+Solution 46:
+o o o x o o o o 
+o o o o o o o x 
+o o o o x o o o 
+o o x o o o o o 
+x o o o o o o o 
+o o o o o o x o 
+o x o o o o o o 
+o o o o o x o o 
+
+Worker Counter = 1800M, Completed=40.67% (Total~=4426M), run=344.642s
+Worker Counter = 1900M, Completed=42.93% (Total~=4426M), run=363.357s
+passed 3
+Solution 47:
+o o o o x o o o 
+x o o o o o o o 
+o o o x o o o o 
+o o o o o x o o 
+o o o o o o o x 
+o x o o o o o o 
+o o o o o o x o 
+o o x o o o o o 
+
+Worker Counter = 2000M, Completed=45.19% (Total~=4426M), run=382.55s
+passed 3
+Solution 48:
+o o o o x o o o 
+x o o o o o o o 
+o o o o o o o x 
+o o o x o o o o 
+o x o o o o o o 
+o o o o o o x o 
+o o x o o o o o 
+o o o o o x o o 
+
+passed 3
+Solution 49:
+o o o o x o o o 
+x o o o o o o o 
+o o o o o o o x 
+o o o o o x o o 
+o o x o o o o o 
+o o o o o o x o 
+o x o o o o o o 
+o o o x o o o o 
+
+passed 3
+Solution 50:
+o o o o x o o o 
+o x o o o o o o 
+o o o x o o o o 
+o o o o o x o o 
+o o o o o o o x 
+o o x o o o o o 
+x o o o o o o o 
+o o o o o o x o 
+
+passed 3
+Solution 51:
+o o o o x o o o 
+o x o o o o o o 
+o o o x o o o o 
+o o o o o o x o 
+o o x o o o o o 
+o o o o o o o x 
+o o o o o x o o 
+x o o o o o o o 
+
+passed 3
+Solution 52:
+o o o o x o o o 
+o x o o o o o o 
+o o o o o x o o 
+x o o o o o o o 
+o o o o o o x o 
+o o o x o o o o 
+o o o o o o o x 
+o o x o o o o o 
+
+passed 3
+Solution 53:
+o o o o x o o o 
+o x o o o o o o 
+o o o o o o o x 
+x o o o o o o o 
+o o o x o o o o 
+o o o o o o x o 
+o o x o o o o o 
+o o o o o x o o 
+
+passed 3
+Solution 54:
+o o o o x o o o 
+o o x o o o o o 
+x o o o o o o o 
+o o o o o x o o 
+o o o o o o o x 
+o x o o o o o o 
+o o o x o o o o 
+o o o o o o x o 
+
+passed 3
+Solution 55:
+o o o o x o o o 
+o o x o o o o o 
+x o o o o o o o 
+o o o o o o x o 
+o x o o o o o o 
+o o o o o o o x 
+o o o o o x o o 
+o o o x o o o o 
+
+passed 3
+Solution 56:
+o o o o x o o o 
+o o x o o o o o 
+o o o o o o o x 
+o o o x o o o o 
+o o o o o o x o 
+x o o o o o o o 
+o o o o o x o o 
+o x o o o o o o 
+
+Worker Counter = 2100M, Completed=47.45% (Total~=4426M), run=402.211s
+passed 3
+Solution 57:
+o o o o x o o o 
+o o o o o o x o 
+x o o o o o o o 
+o o x o o o o o 
+o o o o o o o x 
+o o o o o x o o 
+o o o x o o o o 
+o x o o o o o o 
+
+passed 3
+Solution 58:
+o o o o x o o o 
+o o o o o o x o 
+x o o o o o o o 
+o o o x o o o o 
+o x o o o o o o 
+o o o o o o o x 
+o o o o o x o o 
+o o x o o o o o 
+
+passed 3
+Solution 59:
+o o o o x o o o 
+o o o o o o x o 
+o x o o o o o o 
+o o o x o o o o 
+o o o o o o o x 
+x o o o o o o o 
+o o x o o o o o 
+o o o o o x o o 
+
+passed 3
+Solution 60:
+o o o o x o o o 
+o o o o o o x o 
+o x o o o o o o 
+o o o o o x o o 
+o o x o o o o o 
+x o o o o o o o 
+o o o o o o o x 
+o o o x o o o o 
+
+passed 3
+Solution 61:
+o o o o x o o o 
+o o o o o o x o 
+o x o o o o o o 
+o o o o o x o o 
+o o x o o o o o 
+x o o o o o o o 
+o o o x o o o o 
+o o o o o o o x 
+
+passed 3
+Solution 62:
+o o o o x o o o 
+o o o o o o x o 
+o o o x o o o o 
+x o o o o o o o 
+o o x o o o o o 
+o o o o o o o x 
+o o o o o x o o 
+o x o o o o o o 
+
+passed 3
+Solution 63:
+o o o o x o o o 
+o o o o o o o x 
+o o o x o o o o 
+x o o o o o o o 
+o o x o o o o o 
+o o o o o x o o 
+o x o o o o o o 
+o o o o o o x o 
+
+passed 3
+Solution 64:
+o o o o x o o o 
+o o o o o o o x 
+o o o x o o o o 
+x o o o o o o o 
+o o o o o o x o 
+o x o o o o o o 
+o o o o o x o o 
+o o x o o o o o 
+
+Worker Counter = 2200M, Completed=49.71% (Total~=4426M), run=421.263s
+passed 3
+Solution 65:
+o o o o o x o o 
+x o o o o o o o 
+o o o o x o o o 
+o x o o o o o o 
+o o o o o o o x 
+o o x o o o o o 
+o o o o o o x o 
+o o o x o o o o 
+
+Worker Counter = 2300M, Completed=51.97% (Total~=4426M), run=440.227s
+passed 3
+Solution 66:
+o o o o o x o o 
+o x o o o o o o 
+o o o o o o x o 
+x o o o o o o o 
+o o x o o o o o 
+o o o o x o o o 
+o o o o o o o x 
+o o o x o o o o 
+
+passed 3
+Solution 67:
+o o o o o x o o 
+o x o o o o o o 
+o o o o o o x o 
+x o o o o o o o 
+o o o x o o o o 
+o o o o o o o x 
+o o o o x o o o 
+o o x o o o o o 
+
+passed 3
+Solution 68:
+o o o o o x o o 
+o o x o o o o o 
+x o o o o o o o 
+o o o o o o x o 
+o o o o x o o o 
+o o o o o o o x 
+o x o o o o o o 
+o o o x o o o o 
+
+passed 3
+Solution 69:
+o o o o o x o o 
+o o x o o o o o 
+x o o o o o o o 
+o o o o o o o x 
+o o o o x o o o 
+o x o o o o o o 
+o o o x o o o o 
+o o o o o o x o 
+
+passed 3
+Solution 70:
+o o o o o x o o 
+o o x o o o o o 
+x o o o o o o o 
+o o o o o o o x 
+o o o x o o o o 
+o x o o o o o o 
+o o o o o o x o 
+o o o o x o o o 
+
+passed 3
+Solution 71:
+o o o o o x o o 
+o o x o o o o o 
+o o o o x o o o 
+o o o o o o x o 
+x o o o o o o o 
+o o o x o o o o 
+o x o o o o o o 
+o o o o o o o x 
+
+passed 3
+Solution 72:
+o o o o o x o o 
+o o x o o o o o 
+o o o o x o o o 
+o o o o o o o x 
+x o o o o o o o 
+o o o x o o o o 
+o x o o o o o o 
+o o o o o o x o 
+
+passed 3
+Solution 73:
+o o o o o x o o 
+o o x o o o o o 
+o o o o o o x o 
+o x o o o o o o 
+o o o x o o o o 
+o o o o o o o x 
+x o o o o o o o 
+o o o o x o o o 
+
+passed 3
+Solution 74:
+o o o o o x o o 
+o o x o o o o o 
+o o o o o o x o 
+o x o o o o o o 
+o o o o o o o x 
+o o o o x o o o 
+x o o o o o o o 
+o o o x o o o o 
+
+passed 3
+Solution 75:
+o o o o o x o o 
+o o x o o o o o 
+o o o o o o x o 
+o o o x o o o o 
+x o o o o o o o 
+o o o o o o o x 
+o x o o o o o o 
+o o o o x o o o 
+
+passed 3
+Solution 76:
+o o o o o x o o 
+o o o x o o o o 
+x o o o o o o o 
+o o o o x o o o 
+o o o o o o o x 
+o x o o o o o o 
+o o o o o o x o 
+o o x o o o o o 
+
+passed 3
+Solution 77:
+o o o o o x o o 
+o o o x o o o o 
+o x o o o o o o 
+o o o o o o o x 
+o o o o x o o o 
+o o o o o o x o 
+x o o o o o o o 
+o o x o o o o o 
+
+passed 3
+Solution 78:
+o o o o o x o o 
+o o o x o o o o 
+o o o o o o x o 
+x o o o o o o o 
+o o x o o o o o 
+o o o o x o o o 
+o x o o o o o o 
+o o o o o o o x 
+
+passed 3
+Solution 79:
+o o o o o x o o 
+o o o x o o o o 
+o o o o o o x o 
+x o o o o o o o 
+o o o o o o o x 
+o x o o o o o o 
+o o o o x o o o 
+o o x o o o o o 
+
+Worker Counter = 2400M, Completed=54.23% (Total~=4426M), run=459.494s
+passed 3
+Solution 80:
+o o o o o x o o 
+o o o o o o o x 
+o x o o o o o o 
+o o o x o o o o 
+x o o o o o o o 
+o o o o o o x o 
+o o o o x o o o 
+o o x o o o o o 
+
+Worker Counter = 2500M, Completed=56.48% (Total~=4426M), run=478.434s
+passed 3
+Solution 81:
+o o o o o o x o 
+x o o o o o o o 
+o o x o o o o o 
+o o o o o o o x 
+o o o o o x o o 
+o o o x o o o o 
+o x o o o o o o 
+o o o o x o o o 
+
+passed 3
+Solution 82:
+o o o o o o x o 
+o x o o o o o o 
+o o o x o o o o 
+x o o o o o o o 
+o o o o o o o x 
+o o o o x o o o 
+o o x o o o o o 
+o o o o o x o o 
+
+passed 3
+Solution 83:
+o o o o o o x o 
+o x o o o o o o 
+o o o o o x o o 
+o o x o o o o o 
+x o o o o o o o 
+o o o x o o o o 
+o o o o o o o x 
+o o o o x o o o 
+
+Worker Counter = 2600M, Completed=58.74% (Total~=4426M), run=497.724s
+passed 3
+Solution 84:
+o o o o o o x o 
+o o x o o o o o 
+x o o o o o o o 
+o o o o o x o o 
+o o o o o o o x 
+o o o o x o o o 
+o x o o o o o o 
+o o o x o o o o 
+
+passed 3
+Solution 85:
+o o o o o o x o 
+o o x o o o o o 
+o o o o o o o x 
+o x o o o o o o 
+o o o o x o o o 
+x o o o o o o o 
+o o o o o x o o 
+o o o x o o o o 
+
+passed 3
+Solution 86:
+o o o o o o x o 
+o o o x o o o o 
+o x o o o o o o 
+o o o o x o o o 
+o o o o o o o x 
+x o o o o o o o 
+o o x o o o o o 
+o o o o o x o o 
+
+passed 3
+Solution 87:
+o o o o o o x o 
+o o o x o o o o 
+o x o o o o o o 
+o o o o o o o x 
+o o o o o x o o 
+x o o o o o o o 
+o o x o o o o o 
+o o o o x o o o 
+
+passed 3
+Solution 88:
+o o o o o o x o 
+o o o o x o o o 
+o o x o o o o o 
+x o o o o o o o 
+o o o o o x o o 
+o o o o o o o x 
+o x o o o o o o 
+o o o x o o o o 
+
+Worker Counter = 2700M, Completed=61.00% (Total~=4426M), run=517.15s
+Worker Counter = 2800M, Completed=63.26% (Total~=4426M), run=535.916s
+passed 3
+Solution 89:
+o o o o o o o x 
+o x o o o o o o 
+o o o x o o o o 
+x o o o o o o o 
+o o o o o o x o 
+o o o o x o o o 
+o o x o o o o o 
+o o o o o x o o 
+
+passed 3
+Solution 90:
+o o o o o o o x 
+o x o o o o o o 
+o o o o x o o o 
+o o x o o o o o 
+x o o o o o o o 
+o o o o o o x o 
+o o o x o o o o 
+o o o o o x o o 
+
+passed 3
+Solution 91:
+o o o o o o o x 
+o o x o o o o o 
+x o o o o o o o 
+o o o o o x o o 
+o x o o o o o o 
+o o o o x o o o 
+o o o o o o x o 
+o o o x o o o o 
+
+passed 3
+Solution 92:
+o o o o o o o x 
+o o o x o o o o 
+x o o o o o o o 
+o o x o o o o o 
+o o o o o x o o 
+o x o o o o o o 
+o o o o o o x o 
+o o o o x o o o 
+
+Worker Counter = 2900M, Completed=65.52% (Total~=4426M), run=555.49s
+Worker Counter = 3000M, Completed=67.78% (Total~=4426M), run=574.307s
+Worker Counter = 3100M, Completed=70.04% (Total~=4426M), run=592.513s
+Worker Counter = 3200M, Completed=72.30% (Total~=4426M), run=610.756s
+Worker Counter = 3300M, Completed=74.56% (Total~=4426M), run=629.169s
+Worker Counter = 3400M, Completed=76.82% (Total~=4426M), run=647.437s
+Worker Counter = 3500M, Completed=79.08% (Total~=4426M), run=665.571s
+Worker Counter = 3600M, Completed=81.34% (Total~=4426M), run=683.867s
+Worker Counter = 3700M, Completed=83.60% (Total~=4426M), run=702.253s
+Worker Counter = 3800M, Completed=85.86% (Total~=4426M), run=721.316s
+Worker Counter = 3900M, Completed=88.12% (Total~=4426M), run=740.404s
+Worker Counter = 4000M, Completed=90.38% (Total~=4426M), run=758.747s
+Worker Counter = 4100M, Completed=92.63% (Total~=4426M), run=777.042s
+Worker Counter = 4200M, Completed=94.89% (Total~=4426M), run=795.29s
+Worker Counter = 4300M, Completed=97.15% (Total~=4426M), run=813.586s
+Worker Counter = 4400M, Completed=99.41% (Total~=4426M), run=831.933s
+placement generate finished
+Total solutions = 92
+The execution time is 836.676 sec
