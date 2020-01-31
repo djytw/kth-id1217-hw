@@ -45,5 +45,8 @@ testh3:
 testh5:
 	@./build/h5 tests/h5f1.txt tests/h5f2.txt > ./logs/h5.log
 
+testh6:
+	@./build/h6 > ./logs/h6.log
+
 testh7:
 	@./build/h7 > ./logs/h7.log
