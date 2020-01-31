@@ -56,10 +56,13 @@ int main(int argc, char **argv){
         memcpy(&palin[top], palindro[l], palintop[l]*sizeof(short));
         top += palintop[l];
     }
+    end_time = read_timer();
+
     qsort(palin, top, sizeof(short), cmpfunc);
     FILE* fo = fopen("tests/h6.out", "w+");
     fprintf(fo, "Total %d palindro words\n", top);
     printf("Total %d palindro words\n", top);
+    printf("The execution time is %g sec\n", end_time - start_time);
     for (i = 0; i < top; i++){
         fprintf(fo,"%s\n",dict[palin[i]]);
     }
