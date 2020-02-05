@@ -105,7 +105,7 @@ int main(int argc, char **argv){
             usleep(1000);
             continue;
         }
-        place2map(place, &Stack[Stack_Top*8]);
+        memcpy(&Stack[Stack_Top*8],place,8);
         Stack_Top++;
         pthread_mutex_unlock(&count_lock);
         next_placement(place);
@@ -123,19 +123,10 @@ int main(int argc, char **argv){
     return 0;
 }
 void *Worker(void *arg) {
-    uint8_t *map, place[8], maps[800];
+    uint8_t map[8], place[8], maps[800];
     int head = 0;
     while(1){
         pthread_mutex_lock(&count_lock);
-        if (Stack_Top == 0){
-            if (Finished){
-                pthread_mutex_unlock(&count_lock);
-                pthread_exit(0);
-            }
-            pthread_mutex_unlock(&count_lock);
-            usleep(1000);
-            continue; 
-        }
         if (Stack_Top > 100){
             Stack_Top -= 100;
             memcpy(maps, &Stack[Stack_Top*8], 800);
@@ -145,8 +136,16 @@ void *Worker(void *arg) {
                 end_time = read_timer();
                 printf("Worker Counter = %lldM, Completed=%2.2lf%% (Total~=4426M), run=%gs\n",Counter/1000000, (double)Counter/10000/4426, end_time - start_time);
             }
+        }else if (Stack_Top == 0){
+            if (Finished){
+                pthread_mutex_unlock(&count_lock);
+                pthread_exit(0);
+            }
+            pthread_mutex_unlock(&count_lock);
+            usleep(1000);
+            continue; 
         }else{
-        Counter ++;
+            Counter ++;
             if (Counter % 100000000 == 0){
                 end_time = read_timer();
                 printf("Worker Counter = %lldM, Completed=%2.2lf%% (Total~=4426M), run=%gs\n",Counter/1000000, (double)Counter/10000/4426, end_time - start_time);
@@ -159,7 +158,7 @@ void *Worker(void *arg) {
 
         while (head > 0){
         head --;
-        map = &maps[head*8];
+        place2map(&maps[head*8], map);
         //check row
         int i;
         for (i = 0; i < 8; i++){
