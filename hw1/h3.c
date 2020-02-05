@@ -57,14 +57,13 @@ void *Worker(void *arg) {
     int pos;
     volatile double t = 0;
     while(1){
-        pos = __sync_fetch_and_add(&NextPos, 1);
-        if (pos >= Slices)break;
-        t = area((double)pos * Step);
         pthread_mutex_lock(&count_lock);
-        Counter += pos;
-        Result += t;
+        pos = NextPos++;
         pthread_mutex_unlock(&count_lock);
+        if (pos >= Slices)break;
+        t += area((double)pos * Step);
     }
+    Result += t;
     return NULL;
 }
 

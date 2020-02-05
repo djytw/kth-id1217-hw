@@ -2,32 +2,32 @@
 
 1 Threads, 1M Slices
 pi = 3.141592652 count = 499999500000
-The execution time is 0.049946 sec
+The execution time is 0.066982 sec
 
 4 Threads, 1M Slices
 pi = 3.141592652 count = 499999500000
-The execution time is 0.118359 sec
+The execution time is 0.1505 sec
 
 7 Threads, 1M Slices
 pi = 3.141592652 count = 499999500000
-The execution time is 0.145729 sec
+The execution time is 0.183876 sec
 
 10 Threads, 1M Slices
 pi = 3.141592652 count = 499999500000
-The execution time is 0.214243 sec
+The execution time is 0.195362 sec
 
 13 Threads, 1M Slices
 pi = 3.141592652 count = 499999500000
-The execution time is 0.229793 sec
+The execution time is 0.193541 sec
 
 16 Threads, 1M Slices
 pi = 3.141592652 count = 499999500000
-The execution time is 0.221629 sec
+The execution time is 0.194908 sec
 
 19 Threads, 1M Slices
 pi = 3.141592652 count = 499999500000
-The execution time is 0.207523 sec
+The execution time is 0.196307 sec
 
 22 Threads, 1M Slices
 pi = 3.141592652 count = 499999500000
-The execution time is 0.210738 sec
+The execution time is 0.195218 sec

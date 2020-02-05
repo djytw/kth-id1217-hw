@@ -1,6 +1,6 @@
 CC := gcc
 LIBS := -lpthread -lm
-CFLAGS := -Wall -g -O3
+CFLAGS :=  -g -O3
 SRCS := $(wildcard *.c)
 TARGET := $(SRCS:%.c=build/%)
 
