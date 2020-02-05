@@ -50,7 +50,6 @@ int main(int argc, char **argv){
     return 0;
 }
 double area(double x){
-    __sync_synchronize();
     return (f(x) + f(x + Step)) * Step / 2;
 }
 void *Worker(void *arg) {
