@@ -32,7 +32,8 @@ void print(uint64_t q){
  
 bool canPlaceQueen(uint64_t q,int k){
     uint8_t* queen = (uint8_t*)&q;
-    for(int i = 0; i < k; i++){
+    int i;
+    for(i = 0; i < k; i++){
         if(queen[i] == queen[k] || abs(k-i) == abs(queen[k]-queen[i])) return false;
     }
     return true;
@@ -40,16 +41,17 @@ bool canPlaceQueen(uint64_t q,int k){
 
 void eightQueen(uint64_t q,int k){
     uint8_t* queen = (uint8_t*)&q;
-    for(int i=0; i<8; i++){
+    int i;
+    for(i = 0; i < 8; i++){
         queen[k] = i;
-        if(k == 7 && canPlaceQueen(q,k))
+        if(k == 7 && canPlaceQueen(q, k))
         {
             print(q);
             return;
         }
-        else if(canPlaceQueen(q,k))
+        else if(canPlaceQueen(q, k))
         {
-            eightQueen(q,k+1);
+            eightQueen(q, k + 1);
         }
     }
 }
