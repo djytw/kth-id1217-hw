@@ -1,2 +1,5 @@
 build/
 .vscode/*
+*.class
+hw4/*/
+
