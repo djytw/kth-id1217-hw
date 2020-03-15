@@ -6,7 +6,7 @@
 
 #define MAX_BODIES 240
 #define DEFAULT_STEPS 20000
-#define DEFAULT_DT 0.01
+#define DEFAULT_DT 1
 #define BODY_DIAMETER 0.1 //if distance is less than diameter, use diameter instead. prevent divide 0 error. also prevent huge force.
 typedef struct{
     double x;
