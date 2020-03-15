@@ -3,4 +3,4 @@ build/
 *.class
 hw4/*/
 *.dat
-
+*.png
