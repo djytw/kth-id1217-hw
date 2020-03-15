@@ -33,7 +33,21 @@ void calculateForces(long myid) {
     point direction;
     //int cyc = numWorkers * 2;  //Use reversed strips, a cycle is 2*numworkers. 4workers cycle: W1 W2 W3 W4 W4 W3 W2 W1
     int i, j;
-    for (i = myid; i < gnumBodies; i += numWorkers){
+    for (i = myid; i < gnumBodies; i += numWorkers*2){
+        for (j = i+1; j < gnumBodies; j++) {
+            distance = sqrt( pow((p[i].x - p[j].x), 2) + pow((p[i].y - p[j].y), 2) );
+            if (distance < BODY_DIAMETER) distance = BODY_DIAMETER;
+            magnitude = (G * m[i] * m[j]) / pow(distance, 2);
+            direction.x = p[j].x-p[i].x;
+            direction.y = p[j].y-p[i].y;
+            f[myid][i].x = f[myid][i].x + magnitude*direction.x/distance;
+            f[myid][j].x = f[myid][j].x - magnitude*direction.x/distance;
+            f[myid][i].y = f[myid][i].y + magnitude*direction.y/distance;
+            f[myid][j].y = f[myid][j].y - magnitude*direction.y/distance;
+            //printf("%ld ",myid);
+        }
+    }
+    for (i = numWorkers*2 - 1 - myid; i < gnumBodies; i += numWorkers*2){
         for (j = i+1; j < gnumBodies; j++) {
             distance = sqrt( pow((p[i].x - p[j].x), 2) + pow((p[i].y - p[j].y), 2) );
             if (distance < BODY_DIAMETER) distance = BODY_DIAMETER;
