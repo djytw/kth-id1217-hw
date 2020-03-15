@@ -19,7 +19,7 @@ typedef struct{
 point p[240], v[240], f[MAX_WORKERS][240]; 
 double m[240];
 const double G = 6.67e-11;
-int gnumBodies, numSteps, numWorkers;
+int gnumBodies, numSteps, numWorkers, xylimit;
 double DT;
 pthread_mutex_t barrier;
 pthread_cond_t go;
@@ -70,6 +70,12 @@ void moveBodies(long myid) {
         v[i].y = v[i].y + deltav.y;
         p[i].x = p[i].x + deltap.x;
         p[i].y = p[i].y + deltap.y;
+        if (xylimit){
+            if(p[i].x > xylimit) p[i].x = xylimit;
+            if(p[i].x < -xylimit) p[i].x = -xylimit;
+            if(p[i].y > xylimit) p[i].y = xylimit;
+            if(p[i].y < -xylimit) p[i].y = -xylimit;
+        }
     }
 }
 
@@ -101,7 +107,7 @@ void printBodies(const char* fileName){
 int main(int argc, char *argv[]) {
 
     if (argc <= 2){
-        printf("Usage: %s gnumBodies numWorkers <numSteps> <DT>\n", argv[0]);
+        printf("Usage: %s gnumBodies numWorkers <numSteps> <DT> <XY-Limit>\n", argv[0]);
         return 0;
     }
 
@@ -110,6 +116,7 @@ int main(int argc, char *argv[]) {
     numSteps = (argc > 3)? atoi(argv[3]) : DEFAULT_STEPS;
     DT = DEFAULT_DT;
     if (argc > 4) sscanf(argv[4], "%lf", &DT);
+    xylimit = (argc > 5)? atoi(argv[5]) : 0;
     if (gnumBodies > MAX_BODIES) gnumBodies = MAX_BODIES;
     if (numWorkers > MAX_WORKERS) numWorkers = MAX_WORKERS;
     if (gnumBodies%(numWorkers*2)) {
