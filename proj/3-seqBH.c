@@ -71,8 +71,8 @@ void initBodies(){
     for (i = 1; i*i < gnumBodies; i++);
     int length = i;
     for (i = 0; i < gnumBodies; i++){
-        p[i].x = i % length - length; //place on grid
-        p[i].y = i / length - length;
+        p[i].x = i % length - length/2; //place on grid
+        p[i].y = i / length - length/2;
         m[i] = 10000; //G is small, use big mass
         v[i].x = 0; // initial volocity is 0
         v[i].y = 0;
