@@ -17,3 +17,9 @@ build/%:%.c
 
 clean:
 	@rm -rf build
+
+test:
+	@make clean
+	@make TEST=1
+	@echo > ./test.log
+	@./test.sh
