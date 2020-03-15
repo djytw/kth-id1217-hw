@@ -62,9 +62,10 @@ void printBodies(const char* fileName){
     }
     fclose(fout);
 }
-
+//int count = 0;
 void constructQuadtree(){
     Root = (Quad*)malloc(sizeof(Quad));
+    //count ++;
     Root->index = 0;
     Root->tx = 0;
     Root->ty = 0;
@@ -91,6 +92,7 @@ void constructQuadtree(){
         while(1){
             for(j = 0; j < 4; j++) {
                 q->sub[j] = (Quad*)malloc(sizeof(Quad));
+                //count ++;
                 q->sub[j]->index = -2;
                 q->sub[j]->size =q->size/2;
             }
@@ -122,6 +124,11 @@ void constructQuadtree(){
             }
             if (temp2 != temp) {
                 q->sub[temp2]->index = i;
+                break;
+            }
+            if (q->size < BODY_DIAMETER){
+                // bodies too close
+                q->sub[3 - temp]->index = i;
                 break;
             }
             q = q->sub[temp];
@@ -175,12 +182,13 @@ void calculateForce(int id, Quad* q){
 
 void deleteTree(Quad* q){
     if (q->index != -1){
-        free(q);
+        free(q);//count --;
     }else{
         deleteTree(q->sub[0]);
         deleteTree(q->sub[1]);
         deleteTree(q->sub[2]);
         deleteTree(q->sub[3]);
+        free(q);//count--;
     }
 }
 // calculate new velocity and position for each body
@@ -217,7 +225,6 @@ int main(int argc, char *argv[]) {
     gnumBodies = (argc > 1)? atoi(argv[1]) : MAX_BODIES;
     theta = DEFAULT_THETA;
     if (argc > 2) sscanf(argv[2], "%lf", &theta);
-    theta/=2; //because quadtree->size is half of the length
     numSteps = (argc > 3)? atoi(argv[3]) : DEFAULT_STEPS;
     DT = DEFAULT_DT;
     if (argc > 4) sscanf(argv[4], "%lf", &DT);
@@ -226,6 +233,7 @@ int main(int argc, char *argv[]) {
 
     printf("sequential Barnes-Hut n-body. \ngnumBodies=%d, theta=%lf, numSteps=%d, DT=%lf\n", gnumBodies, theta, numSteps, DT);
 
+    theta/=2; //because quadtree->size is half of the length
     initBodies();
     struct timeval start, end;
     int i, j;
@@ -239,6 +247,8 @@ int main(int argc, char *argv[]) {
             calculateForce(j, Root);
         }
         deleteTree(Root);
+        //printf("%d\n",count);
+        //count =0;
         moveBodies();
     }
     ////////////////////ENDTIMING/////////////////////
