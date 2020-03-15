@@ -119,8 +119,8 @@ int main(int argc, char *argv[]) {
     xylimit = (argc > 5)? atoi(argv[5]) : 0;
     if (gnumBodies > MAX_BODIES) gnumBodies = MAX_BODIES;
     if (numWorkers > MAX_WORKERS) numWorkers = MAX_WORKERS;
-    if (gnumBodies%(numWorkers*2)) {
-        printf("gnumBodies must divisble by numWorkers*2\n");
+    if (gnumBodies%(numWorkers)) {
+        printf("gnumBodies must divisble by numWorkers\n");
         return 0;
     }
 #ifndef TEST
