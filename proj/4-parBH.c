@@ -251,7 +251,7 @@ int main(int argc, char *argv[]) {
     }
     sliceLength = gnumBodies/numWorkers;
 #ifndef TEST
-    printf("sequential Barnes-Hut n-body. \ngnumBodies=%d, theta=%lf, numSteps=%d, DT=%lf\n", gnumBodies, theta, numSteps, DT);
+    printf("parallel Barnes-Hut n-body. \ngnumBodies=%d, theta=%lf, numSteps=%d, DT=%lf\n", gnumBodies, theta, numSteps, DT);
 #endif
     theta/=2; //because quadtree->size is half of the length
     initBodies();
@@ -300,6 +300,14 @@ void *Worker(void *arg) {
     for (iter = 0; iter < numSteps; iter ++){
         if (myid == 0){
             constructQuadtree();
+        }
+        Barrier();
+        if (numWorkers == 4){
+            fillQuadtree(Root->sub[myid]);
+        } else if (numWorkers == 2){
+            fillQuadtree(Root->sub[myid]);
+            fillQuadtree(Root->sub[myid+2]);
+        } else if (myid == 0){
             fillQuadtree(Root);
         }
         Barrier();
@@ -308,6 +316,19 @@ void *Worker(void *arg) {
             calculateForce(j, Root);
         }
         Barrier();
+        if (numWorkers == 4){
+            deleteTree(Root->sub[myid]);
+        } else if (numWorkers == 2){
+            deleteTree(Root->sub[myid]);
+            deleteTree(Root->sub[myid+2]);
+        } else if (myid == 0){
+            deleteTree(Root->sub[0]);
+            deleteTree(Root->sub[1]);
+            deleteTree(Root->sub[2]);
+            deleteTree(Root->sub[3]);
+        }if (myid == 0){
+            free(Root);
+        }
         moveBodies(myid);
         Barrier();
     }

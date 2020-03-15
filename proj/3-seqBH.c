@@ -168,6 +168,7 @@ void calculateForce(int id, Quad* q){
     double distance, magnitude; 
     point direction;
     if (q->index == -2) return;
+    if (q->index == id) return;
     distance = sqrt( pow((p[id].x - q->x), 2) + pow((p[id].y - q->y), 2) );
     if (q->index != -1 || theta > q->size/distance) {
         //q is a leaf calc directly, or far enough, use approximation
