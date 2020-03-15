@@ -7,6 +7,7 @@
 #define MAX_BODIES 240
 #define DEFAULT_STEPS 20000
 #define DEFAULT_DT 1
+#define DEFAULT_LIMIT 40
 #define BODY_DIAMETER 0.1 //if distance is less than diameter, use diameter instead. prevent divide 0 error. also prevent huge force.
 typedef struct{
     double x;
@@ -17,7 +18,7 @@ typedef struct{
 point p[240], v[240], f[240]; 
 double m[240];
 const double G = 6.67e-11;
-int gnumBodies, numSteps;
+int gnumBodies, numSteps, xylimit;
 double DT;
 
 // calculate total force for every pair of bodies
@@ -54,6 +55,12 @@ void moveBodies() {
         v[i].y = v[i].y + deltav.y;
         p[i].x = p[i].x + deltap.x;
         p[i].y = p[i].y + deltap.y;
+        if (xylimit){
+            if(p[i].x > xylimit) p[i].x = xylimit;
+            if(p[i].x < -xylimit) p[i].x = -xylimit;
+            if(p[i].y > xylimit) p[i].y = xylimit;
+            if(p[i].y < -xylimit) p[i].y = -xylimit;
+        }
         f[i].x = f[i].y = 0.0; // reset force vector
     }
 }
@@ -64,8 +71,8 @@ void initBodies(){
     for (i = 1; i*i < gnumBodies; i++);
     int length = i;
     for (i = 0; i < gnumBodies; i++){
-        p[i].x = i % length; //place on grid
-        p[i].y = i / length;
+        p[i].x = i % length - length; //place on grid
+        p[i].y = i / length - length;
         m[i] = 10000; //G is small, use big mass
         v[i].x = 0; // initial volocity is 0
         v[i].y = 0;
@@ -88,7 +95,7 @@ void printBodies(const char* fileName){
 int main(int argc, char *argv[]) {
 
     if (argc <= 1){
-        printf("Usage: %s gnumBodies <numSteps> <DT>\n", argv[0]);
+        printf("Usage: %s gnumBodies <numSteps> <DT> <XY-Limit>\n", argv[0]);
         return 0;
     }
 
@@ -97,6 +104,7 @@ int main(int argc, char *argv[]) {
     DT = DEFAULT_DT;
     if (argc > 3) sscanf(argv[3], "%lf", &DT);
     if (gnumBodies > MAX_BODIES) gnumBodies = MAX_BODIES;
+    xylimit = (argc > 4)? atoi(argv[4]) : DEFAULT_LIMIT;
 
     printf("sequential N^2 n-body. \ngnumBodies=%d, numSteps=%d, DT=%lf\n", gnumBodies, numSteps, DT);
 
