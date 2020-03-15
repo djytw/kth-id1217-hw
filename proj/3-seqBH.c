@@ -62,10 +62,10 @@ void printBodies(const char* fileName){
     }
     fclose(fout);
 }
-//int count = 0;
+int count = 0;
 void constructQuadtree(){
     Root = (Quad*)malloc(sizeof(Quad));
-    //count ++;
+    count ++;
     Root->index = 0;
     Root->tx = 0;
     Root->ty = 0;
@@ -92,7 +92,7 @@ void constructQuadtree(){
         while(1){
             for(j = 0; j < 4; j++) {
                 q->sub[j] = (Quad*)malloc(sizeof(Quad));
-                //count ++;
+                count ++;
                 q->sub[j]->index = -2;
                 q->sub[j]->size =q->size/2;
             }
@@ -129,6 +129,8 @@ void constructQuadtree(){
             if (q->size < BODY_DIAMETER){
                 // bodies too close
                 q->sub[3 - temp]->index = i;
+                p[i].x = q->sub[3 - temp]->tx;
+                p[i].y = q->sub[3 - temp]->ty;
                 break;
             }
             q = q->sub[temp];
@@ -137,7 +139,9 @@ void constructQuadtree(){
 }
 // calculate mass and mass center
 void fillQuadtree(Quad* q){
-    if (q->index == -2) return;
+    if (q->index == -2) {
+        q->mass = 0;
+    }
     if (q->index != -1){
         q->mass = m[q->index];
         q->x = p[q->index].x;
@@ -148,6 +152,7 @@ void fillQuadtree(Quad* q){
         fillQuadtree(q->sub[2]);
         fillQuadtree(q->sub[3]);
         q->mass = q->sub[0]->mass + q->sub[1]->mass + q->sub[2]->mass + q->sub[3]->mass;
+        //printf("%lf\n",q->mass);
         q->x = ( q->sub[0]->x * q->sub[0]->mass +
                  q->sub[1]->x * q->sub[1]->mass +
                  q->sub[2]->x * q->sub[2]->mass +
@@ -211,8 +216,8 @@ void moveBodies() {
             if(p[i].y > xylimit) p[i].y = xylimit;
             if(p[i].y < -xylimit) p[i].y = -xylimit;
         }
-        f[i].x = f[i].y = 0.0; // reset force vector
     }
+    //printf("%lf %lf\n",f[0].x,f[0].y);
 }
 
 int main(int argc, char *argv[]) {
@@ -240,6 +245,7 @@ int main(int argc, char *argv[]) {
     gettimeofday( &start, NULL );
     ////////////////////TIMING///////////////////////
     for (i = 0; i < numSteps; i ++){
+        count = 0;
         constructQuadtree();
         fillQuadtree(Root);
         for (j = 0; j < gnumBodies; j++){
@@ -247,8 +253,6 @@ int main(int argc, char *argv[]) {
             calculateForce(j, Root);
         }
         deleteTree(Root);
-        //printf("%d\n",count);
-        //count =0;
         moveBodies();
     }
     ////////////////////ENDTIMING/////////////////////
