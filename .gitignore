@@ -2,4 +2,5 @@ build/
 .vscode/*
 *.class
 hw4/*/
-
+*.dat
+*.png
