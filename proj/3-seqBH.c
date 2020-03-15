@@ -17,7 +17,7 @@ typedef struct{
 point p[240], v[240], f[240]; 
 double m[240];
 const double G = 6.67e-11;
-int gnumBodies, numSteps, xylimit;
+int gnumBodies, numSteps;
 double DT;
 
 // calculate total force for every pair of bodies
@@ -54,12 +54,6 @@ void moveBodies() {
         v[i].y = v[i].y + deltav.y;
         p[i].x = p[i].x + deltap.x;
         p[i].y = p[i].y + deltap.y;
-        if (xylimit){
-            if(p[i].x > xylimit) p[i].x = xylimit;
-            if(p[i].x < -xylimit) p[i].x = -xylimit;
-            if(p[i].y > xylimit) p[i].y = xylimit;
-            if(p[i].y < -xylimit) p[i].y = -xylimit;
-        }
         f[i].x = f[i].y = 0.0; // reset force vector
     }
 }
@@ -94,7 +88,7 @@ void printBodies(const char* fileName){
 int main(int argc, char *argv[]) {
 
     if (argc <= 1){
-        printf("Usage: %s gnumBodies <numSteps> <DT> <XY-Limit>\n", argv[0]);
+        printf("Usage: %s gnumBodies <numSteps> <DT>\n", argv[0]);
         return 0;
     }
 
@@ -103,7 +97,6 @@ int main(int argc, char *argv[]) {
     DT = DEFAULT_DT;
     if (argc > 3) sscanf(argv[3], "%lf", &DT);
     if (gnumBodies > MAX_BODIES) gnumBodies = MAX_BODIES;
-    xylimit = (argc > 4)? atoi(argv[4]) : 0;
 
     printf("sequential N^2 n-body. \ngnumBodies=%d, numSteps=%d, DT=%lf\n", gnumBodies, numSteps, DT);
 
