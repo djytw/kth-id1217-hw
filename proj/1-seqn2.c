@@ -104,9 +104,9 @@ int main(int argc, char *argv[]) {
     if (argc > 3) sscanf(argv[3], "%lf", &DT);
     if (gnumBodies > MAX_BODIES) gnumBodies = MAX_BODIES;
     xylimit = (argc > 4)? atoi(argv[4]) : 0;
-
+#ifndef TEST
     printf("sequential N^2 n-body. \ngnumBodies=%d, numSteps=%d, DT=%lf\n", gnumBodies, numSteps, DT);
-
+#endif
     initBodies();
 
     struct timeval start, end;
@@ -117,7 +117,13 @@ int main(int argc, char *argv[]) {
         moveBodies();
     }
     gettimeofday( &end, NULL );
-    printBodies("1-1.dat");
     double timeuse  = 1000000 * (end.tv_sec - start.tv_sec) + end.tv_usec - start.tv_usec;
+
+    printBodies("1-1.dat");
+#ifndef TEST
     printf("Finished, Total time = %.3f ms\n", timeuse/1000);
+#else
+    printf("%.3f ",timeuse/1000);
+#endif
+
 }

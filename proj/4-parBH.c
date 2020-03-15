@@ -134,8 +134,8 @@ void constructQuadtree(){
                 q->sub[temp2]->index = i;
                 break;
             }
-            if (q->size < BODY_DIAMETER){
-                // bodies too close
+            if (q->size < BODY_DIAMETER/32){
+                // bodies too close, use approx position
                 q->sub[3 - temp]->index = i;
                 p[i].x = q->sub[3 - temp]->tx;
                 p[i].y = q->sub[3 - temp]->ty;
@@ -250,9 +250,9 @@ int main(int argc, char *argv[]) {
         return 0;
     }
     sliceLength = gnumBodies/numWorkers;
-
+#ifndef TEST
     printf("sequential Barnes-Hut n-body. \ngnumBodies=%d, theta=%lf, numSteps=%d, DT=%lf\n", gnumBodies, theta, numSteps, DT);
-
+#endif
     theta/=2; //because quadtree->size is half of the length
     initBodies();
     struct timeval start, end;
@@ -274,7 +274,11 @@ int main(int argc, char *argv[]) {
     gettimeofday( &end, NULL );
     printBodies("3-1.dat");
     double timeuse  = 1000000 * (end.tv_sec - start.tv_sec) + end.tv_usec - start.tv_usec;
+#ifndef TEST
     printf("Finished, Total time = %.3f ms\n", timeuse/1000);
+#else
+    printf("%.3f ",timeuse/1000);
+#endif
 }
 
 /* a reusable counter barrier */

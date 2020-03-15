@@ -123,7 +123,9 @@ int main(int argc, char *argv[]) {
         printf("gnumBodies must divisble by numWorkers*2\n");
         return 0;
     }
+#ifndef TEST
     printf("parallel N^2 n-body. \ngnumBodies=%d, numSteps=%d, numWorkers=%d, DT=%lf\n", gnumBodies, numSteps, numWorkers, DT);
+#endif
     sliceLength = gnumBodies/numWorkers;
     initBodies();
 
@@ -132,7 +134,6 @@ int main(int argc, char *argv[]) {
     pthread_t workerid[MAX_WORKERS];
     pthread_mutex_init(&barrier, NULL);
     pthread_cond_init(&go, NULL);
-    printBodies("2-0.dat");
 
     gettimeofday( &start, NULL );
     
@@ -146,7 +147,11 @@ int main(int argc, char *argv[]) {
     gettimeofday( &end, NULL );
     printBodies("2-1.dat");
     double timeuse  = 1000000 * (end.tv_sec - start.tv_sec) + end.tv_usec - start.tv_usec;
+#ifndef TEST
     printf("Finished, Total time = %.3f ms\n", timeuse/1000);
+#else
+    printf("%.3f ",timeuse/1000);
+#endif
 }
 /* a reusable counter barrier */
 void Barrier() {

@@ -4,8 +4,8 @@ CFLAGS := -Wall -g
 SRCS := $(wildcard *.c)
 TARGET := $(SRCS:%.c=build/%)
 
-ifdef DEBUG
-CFLAGS += -DDEBUG
+ifdef TEST
+CFLAGS += -DTEST
 endif
 
 all:$(TARGET)
